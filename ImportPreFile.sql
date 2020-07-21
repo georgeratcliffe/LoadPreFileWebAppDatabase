@@ -4,6 +4,8 @@ BEGIN
 
 BEGIN TRY
 
+declare @starttime datetime = getdate()
+
 insert into dbo.ResultsLog
  select getdate(), 'Load started for ' + @filePath
 
@@ -15,8 +17,6 @@ create table #lines(id int IDENTITY(1,1) PRIMARY KEY, val varchar(100))
 
 if object_id('tempdb..#linesparsed') is not null drop table #linesparsed
 create table #linesparsed(id int,val varchar(100))
-
-declare @starttime datetime = getdate()
 
 declare @SQL nvarchar(200) = ''
 
