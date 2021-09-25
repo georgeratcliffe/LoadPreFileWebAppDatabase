@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[ResultsLog](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[DateTime] [datetime2](7) NOT NULL,
-	[Message] [nvarchar](200) NULL,
+	[Message] [nvarchar](500) NULL,
  CONSTRAINT [PK_ResultsLog] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
